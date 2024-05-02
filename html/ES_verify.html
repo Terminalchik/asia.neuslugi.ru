@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	    <meta charset="utf-8">
+	    <title>Портал государственных услуг Российской Федерации</title>
+	    <link rel="stylesheet" href="../css/style.css">
+	    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="../js/gosjava.js"></script>
+	</head>
+	<body>
+		<div id="modal_window" hidden>
+		<div class="mb-4-a center">
+			<div class="contenter">
+				<div class="modal_title mb-24"><h2>Проблемы с электронной подписью</h2></div>
+				<ol class="plain-list">
+					<li class="mb-24"><div class="caption mb-4"> Не подключён носитель </div><div class="text">Присоедините к компьютеру USB-ключ или смарт-карту</div></li>
+					<li class="mb-24"><div class="caption mb-4"> Не установлен плагин </div><div class="text"><a href="https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr" target="_blank">Скачайте его</a>, перезапустите браузер и попробуйте снова</div></li>
+					<li class="mb-24"><div class="caption mb-4"> У плагина нет доступа </div><div class="text">Дайте доступ согласно <a href="http://static.gosuslugi.ru/cms/htdocs/0/0/0/0/0/0/0/0/0/plugin_manual.pdf" target="_blank">инструкции</a></div></li>
+					<li class="mb-24"><div class="caption mb-4"> Не установлена программа криптопровайдер </div><div class="text">Для некоторых электронных подписей нужна специальная программа. Все подробности — в <a href="https://digital.gov.ru/ru/activity/govservices/certification_authority/" target="_blank">удостоверяющем центре</a>, где вы получали подпись</div></li>
+					<li><div class="caption mb-4"> Интернет браузер настроен неверно </div><div class="text">Добавьте сайт в список надёжных узлов согласно <a href="http://static.gosuslugi.ru/cms/htdocs/0/0/0/0/0/0/0/0/0/plugin_manual.pdf" target="_blank">инструкции</a></div></li>
+				</ol>
+				<button type="button" class="modal_body__close" onclick="close_click(1)"> X </button>
+			</div>
+		</div>
+	</div>
+	<div id="modal_window_trouble" hidden>
+		<div class="mb-10-a center">
+			<div class="contenter">
+				<div class="modal_title"><h2>Обращение к электронной подписи</h2></div>
+					<div class="wait_text">Может занять около минуты</div>
+					<div class="gif"></div>
+			</div>
+		</div>
+	</div>
+	<div id="modal_window_after" hidden>
+		<div class="mb-4-a center">
+			<div class="contenter">
+				<h2 class="modal_title mb-24"> Не установлен плагин </h2>
+				<div class="text-plain"> Для входа с помощью электронной подписи необходимо: </div>
+				<ol class="text-plain" id="modal_ol">
+					<li class="mb-24 ml-40">Установить <a href="https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr" target="_blank">плагин для работы с электронной подписью</a>. После установки плагина перезапустите браузер.</li>
+					<li class="mb-24 ml-40">Присоединить к компьютеру носитель ключа электронной подписи (USB-ключ или смарт-карта). Должен быть вставлен только один носитель.<br> Средство электронной подписи можно получить в одном из аккредитованных Минцифры России <a href="https://digital.gov.ru/ru/activity/govservices/certification_authority/" target="_blank">удостоверяющих центров</a>.<br><br> Для некоторых носителей электронной подписи требуется установить специальную программу — криптопровайдер. Инструкцию по установке и настройке криптопровайдера можно получить в своём аккредитованном УЦ.</li>
+					<li class="mb-24 ml-40">Добавить адреса *.esia.gosuslugi.ru *.gosuslugi.ru в список надёжных узлов (только для браузера Internet Explorer). Для этого необходимо:<br>- зайти в «Свойства обозревателя»;<br>- выбрать закладку «Безопасность»;<br>- выбрать зону для настройки параметров безопасности – «Надёжные узлы», нажать на кнопку «Узлы»;<br>- в поле «Добавить в зону следующий узел» ввести адрес esia.gosuslugi.ru, нажать «Добавить» и закрыть данное окно.</li>
+					<li class="ml-40">Включить/разрешить доступ плагину согласно рекомендациям <a href="http://static.gosuslugi.ru/cms/htdocs/0/0/0/0/0/0/0/0/0/plugin_manual.pdf" target="_blank">документа</a>.</li>
+				</ol>
+				<button type="button" class="modal_body__close" onclick="close_click(2)"> X </button>
+			</div>
+		</div>
+	</div>
+		<div class="body_container" id="main_mody">
+			<div class="form_container mb-20">
+				<header class="mb-40">
+					<a href="https://gosuslugi.ru/" class='logo'><img src="../images/gospict.png" class="pict" alt=""></a>
+				</header>
+				<div class="helper_text justify_text">Подключите носитель электронной подписи</div>
+				<input type="submit" value="Готово" id="plain_button" onclick="modal_show('modal_window_trouble')">
+				<p class="helper_text"><a onclick="modal_show('modal_window')">Проблемы с электронной подписью?</a></p>
+				<p class="helper_text"><a href="../login.html">Войти по логину и паролю</a></p>
+			</div>
+			<p class="helper_text"><a href="https://esia.gosuslugi.ru/login/registration">Зарегистрироваться</a></p>
+		</div>
+		<div class="lamp_container"><div><img src="../images/lamp.png" class="lamp_img" alt=""></div><div class="lamp_text"><a href="https://www.gosuslugi.ru/landing/esia-help" target="_blank">Куда ещё можно войти с паролем от Госуслуг?</a></div>
+		</div>
+	</body>
+</html>
